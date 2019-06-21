@@ -4333,6 +4333,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Buttercream.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Buttercream.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Buttercream.Core.dll": {}
+        }
       }
     }
   },
@@ -11492,10 +11502,16 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Buttercream.Core/1.0.0": {
+      "type": "project",
+      "path": "../Buttercream.Core/Buttercream.Core.csproj",
+      "msbuildProject": "../Buttercream.Core/Buttercream.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Buttercream.Core >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
@@ -11529,7 +11545,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Esther's Doc\\Documents\\Visual Studio 2017\\Buttercream.Core\\Buttercream.Core.csproj": {
+              "projectPath": "C:\\Esther's Doc\\Documents\\Visual Studio 2017\\Buttercream.Core\\Buttercream.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

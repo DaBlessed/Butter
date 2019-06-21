@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Buttercream.Core.Interfaces;
+using Buttercream.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +37,16 @@ namespace Buttercream
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSingleton(Configuration);
+            services.AddSingleton(typeof(IRestService), typeof(RestService));
+
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri("https://api.paystack.co/")
+            };
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("Authorization", "Bearer sk_test_7d0cf8ed07134b43d6a95feccae12c29ff78455d");
+            services.AddSingleton(client);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
